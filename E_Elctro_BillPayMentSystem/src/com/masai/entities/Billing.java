@@ -5,38 +5,50 @@ import java.time.LocalDate;
 
 public class Billing implements Serializable {
 	
-	private double fixedPrice;
-	private int unit;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private double fixedCharge;
+	private int unitsConsumed;
 	private final double TAX = 0.025;
 	private double adjustment;
-	private LocalDate dt;
-	
-	public Billing(){
+	private LocalDate startDate;
+	private LocalDate endDate;
+	private boolean isPaid;
+
+	public Billing() {
 		super();
 	}
-	
-	public Billing(double fixedPrice, int unit, double adjustment, LocalDate dt) {
+
+	public Billing(double fixedCharge, int unitsConsumed, double adjustment, LocalDate startDate, LocalDate endDate, boolean isPaid) {
 		super();
-		this.fixedPrice = fixedPrice;
-		this.unit = unit;
+		this.fixedCharge = fixedCharge;
+		this.unitsConsumed = unitsConsumed;
 		this.adjustment = adjustment;
-		this.dt = dt;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.isPaid = isPaid;
 	}
 
-	public double getFixedPrice() {
-		return fixedPrice;
+	public double getFixedCharge() {
+		return fixedCharge;
 	}
 
-	public void setFixedPrice(double fixedPrice) {
-		this.fixedPrice = fixedPrice;
+	public void setFixedCharge(double fixedCharge) {
+		this.fixedCharge = fixedCharge;
 	}
 
-	public int getUnit() {
-		return unit;
+	public int getUnitsConsumed() {
+		return unitsConsumed;
 	}
 
-	public void setUnit(int unit) {
-		this.unit = unit;
+	public void setUnitsConsumed(int unitsConsumed) {
+		this.unitsConsumed = unitsConsumed;
+	}
+
+	public double getTAX() {
+		return TAX;
 	}
 
 	public double getAdjustment() {
@@ -47,22 +59,36 @@ public class Billing implements Serializable {
 		this.adjustment = adjustment;
 	}
 
-	public LocalDate getDt() {
-		return dt;
+	public LocalDate getStartDate() {
+		return startDate;
 	}
 
-	public void setDt(LocalDate dt) {
-		this.dt = dt;
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
 	}
 
-	public double getTAX() {
-		return TAX;
+	public LocalDate getEndDate() {
+		return endDate;
 	}
 
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+
+	public boolean isPaid() {
+		return isPaid;
+	}
+
+	public void setPaid(boolean isPaid) {
+		this.isPaid = isPaid;
+	}
+	
+	
 	@Override
 	public String toString() {
-		return String.format("Billing [fixedPrice=%s, unit=%s, TAX=%s, adjustment=%s, dt=%s]", fixedPrice, unit, TAX,
-				adjustment, dt);
+		return "Billing [fixedCharge=" + fixedCharge + ", unitsConsumed=" + unitsConsumed + ", TAX=" + TAX
+				+ ", adjustment=" + adjustment + ", startDate=" + startDate + ", endDate=" + endDate + ", isPaid=" + isPaid
+				+ "]";
 	}
 	
 }
