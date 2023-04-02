@@ -33,11 +33,11 @@ public class ConsumerServiceImp implements ConsumerService{
 	@Override
 	public void signUp(Consumer cus, Map<String, Consumer> customers) throws DuplicateDataException {
 		// TODO Auto-generated method stub
-		if (customers.containsKey(cus.getEmail())) {
+		if (customers.containsKey(cus.getUsername())) {
 			throw new DuplicateDataException("Customer already exists , please login");
 		} else {
 
-			customers.put(cus.getEmail(), cus);
+			customers.put(cus.getUsername(), cus);
 
 		}
 	}

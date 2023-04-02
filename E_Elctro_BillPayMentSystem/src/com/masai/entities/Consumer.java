@@ -51,4 +51,13 @@ public class Consumer extends User implements Serializable {
     public void setBill(Billing bill) {
         this.bill = bill;
     }
+
+	@Override
+	public String toString() {
+		return String.format("Consumer [balance=%s, username=%s, password=%s, bill=%s]", balance, username, password,
+				bill);
+	}
+
+	
+    
 }

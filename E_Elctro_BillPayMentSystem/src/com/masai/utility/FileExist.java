@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.masai.entities.Billing;
 import com.masai.entities.Consumer;
+import com.masai.entities.Transaction;
 public class FileExist {
 //	This class is for deserialaiztion
 //	This is for the map of objcets for consumer details....it has Username as key and Consumer Class as value
@@ -44,11 +45,38 @@ public class FileExist {
 
 	}
 	
-	public static List<Billing> billFile() {
+	public static Map<String, Billing> billFile() {
+	    Map<String, Billing> cFile = null;
+	    File f = new File("Billing.ser");
+	    boolean flag = false;
+	    try {
+	        if (!f.exists()) {
+	            f.createNewFile();
+	            flag = true;
+	        }
 
-		List<Billing> tFile = new ArrayList<>();
+	        if (flag) {
+	            cFile = new LinkedHashMap<>();
+	            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+	            oos.writeObject(cFile);
+	        } else {
+	            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+	            cFile = (Map<String, Billing>) ois.readObject();
+	            if (cFile == null) {
+	                cFile = new LinkedHashMap<>();
+	            }
+	        }
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	    }
+	    return cFile;
+	}
+	
+	public static List<Transaction> transactionFile() {
 
-		File f = new File("Billing.ser");
+		List<Transaction> tFile = new ArrayList<>();
+
+		File f = new File("Transactions.ser");
 		boolean flag = false;
 		try {
 			if (!f.exists()) {
@@ -66,7 +94,7 @@ public class FileExist {
 			} else {
 
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-				tFile = (List<Billing>) ois.readObject();
+				tFile = (List<Transaction>) ois.readObject();
 				return tFile;
 
 			}
