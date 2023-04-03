@@ -12,7 +12,9 @@ E-Electro is a Java-based bill payment management system designed to help users 
 While working on the project, I learned how to operate under tight deadlines, read through documentation effectively, and proficiently debug issues that arose.
 
 # Tech Stack
-1. Java 
+1. Core Java
+2. OOPS
+3. Exception Handling
 
 # Authors
 Vikash Bhuyan
