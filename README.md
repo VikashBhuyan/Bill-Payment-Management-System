@@ -1,6 +1,7 @@
 # E-Electro Bill Payment System
 E-Electro is a Java-based bill payment management system designed to help users manage and track their Electricity bills efficiently,storing inhouse-wallet, adding money to the wallet,generating the bill,calculating and paying the bill,etc. 
-
+# Logo
+![alt text](https://github.com/VikashBhuyan/oceanic-payment-5900/blob/main/Logo.PNG?raw=true)
 # Features
 1. Two User : Admin && Consumer.
 2. Login and Signup for Both
