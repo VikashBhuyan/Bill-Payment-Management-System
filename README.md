@@ -19,3 +19,5 @@ While working on the project, I learned how to operate under tight deadlines, re
 
 # Authors
 Vikash Bhuyan
+# Deployed Link
+ <a href="https://drive.google.com/file/d/1Rupy0jGuDnEhCv2pGTl1uYxqNl2LZr0p/view?usp=sharing">Recording</a>
